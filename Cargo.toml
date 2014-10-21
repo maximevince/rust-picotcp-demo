@@ -4,12 +4,12 @@ version = "0.0.1"
 authors = [ "Maxime Vincent <maxime.vince@gmail.com>" ]
 build = "./build_picotcp.sh"
 
+[profile.dev]
+debug=true
+opt-level=0
+
 [[bin]]
 name = "rust-picotcp-demo"
 
 [dependencies.picotcp]
-git = "file:///home/vinz/TASS/PicoTCP/rust-picotcp"
-
-
-
-#//git = "https://github.com/maximevince/rust-picotcp.git"
+git = "https://github.com/maximevince/rust-picotcp.git"
