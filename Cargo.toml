@@ -13,3 +13,6 @@ name = "rust-picotcp-demo"
 
 [dependencies.picotcp]
 git = "https://github.com/maximevince/rust-picotcp.git"
+
+//git="file:///home/dan/rust-picotcp"
+

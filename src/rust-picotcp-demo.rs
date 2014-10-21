@@ -13,10 +13,7 @@ fn main() {
 
     picotcp::stack_init();
 
-    let tun_name = "tun0";
-    let tun_name_cstr = tun_name.to_c_str();
-
-    let pico_dev_eth = picotcp::tun_create(tun_name_cstr.as_ptr());
+    let pico_dev_eth = picotcp::tun_create("tun0");
 
     picotcp::ipv4_link_add(pico_dev_eth, my_ip_addr, my_netmask);
     println!("tun0: ip addr is {}", my_ip_addr);
