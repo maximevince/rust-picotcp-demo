@@ -11,8 +11,11 @@ opt-level=0
 [[bin]]
 name = "rust-picotcp-demo"
 
-[dependencies.picotcp]
-//git = "https://github.com/maximevince/rust-picotcp.git"
+[[bin]]
+name = "rust-picotcp-echo"
 
-git="file:///home/dan/rust-picotcp"
+[dependencies.picotcp]
+git = "https://github.com/maximevince/rust-picotcp.git"
+
+//git="file:///home/dan/rust-picotcp"
 
