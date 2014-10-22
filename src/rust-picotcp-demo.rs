@@ -16,6 +16,8 @@ fn socket_wakeup(ev: u16, sock: &pico_socket) {
         PICO_SOCK_EV_RD => {
             let mut v = recv(sock);
             println!("Received {}", v);
+            let w = send(sock, v);
+            println!("Sent back {} bytes", w);
         }
         _ =>  { println!("Event ain't handled."); }
 
