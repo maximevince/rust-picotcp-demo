@@ -18,7 +18,7 @@ name = "rust-picotcp-echo"
 name = "rust-picotcp-dhcpd"
 
 [dependencies.picotcp]
-//git = "https://github.com/maximevince/rust-picotcp.git"
+git = "https://github.com/maximevince/rust-picotcp.git"
 
-git="file:///home/dan/rust-picotcp"
+//git="file:///home/dan/rust-picotcp"
 
