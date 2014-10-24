@@ -16,7 +16,7 @@ fn socket_wakeup(ev: u16, sock: &pico_socket) {
         PICO_SOCK_EV_RD => {
             let v = recv(sock);
             println!("Received {}", v);
-            let w = send(sock, v);
+            let w = send(sock, v.as_slice());
             println!("Sent back {} bytes", w);
         }
         PICO_SOCK_EV_WR => {
