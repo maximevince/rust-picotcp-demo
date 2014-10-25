@@ -8,7 +8,7 @@ use picotcp::pico_dhcp_server::*;
 
 fn main() {
     /* Initialize stack */
-    let pico = picotcp::stack_init();
+    let pico = picotcp::stack::new();
 
     let my_ip_addr = pico_ip4::new("192.168.2.150");
     let my_netmask = pico_ip4::new("255.255.255.0");
