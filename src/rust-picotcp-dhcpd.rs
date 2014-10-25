@@ -7,7 +7,9 @@ use picotcp::pico_dhcp_server::*;
 
 
 fn main() {
-    picotcp::stack_init();
+    /* Initialize stack */
+    let pico = picotcp::stack_init();
+
     let my_ip_addr = pico_ip4::new("192.168.2.150");
     let my_netmask = pico_ip4::new("255.255.255.0");
     let my_ip6_addr = pico_ip6 { addr:[0xaa, 0xaa, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1] }; // Constructor is still WIP...
@@ -37,6 +39,6 @@ fn main() {
 
     dhcp_server_initiate(&mut settings);
 
-    picotcp::stack_loop();
+    pico.stack_loop();
 }
 
