@@ -13,8 +13,8 @@ fn main() {
     let my_6_netmask = pico_ip6 { addr:[0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0,  0,  0,  0,  0,  0,  0,  0] };
 
     let pico_dev_eth = picotcp::tap_create("tap0");
-    picotcp::ipv4_link_add(pico_dev_eth, my_ip_addr, my_netmask);
-    picotcp::ipv6_link_add(pico_dev_eth, my_ip6_addr, my_6_netmask);
+    picotcp::ipv4_link_add(pico_dev_eth, my_ip_addr.clone(), my_netmask.clone());
+    picotcp::ipv6_link_add(pico_dev_eth, my_ip6_addr.clone(), my_6_netmask.clone());
     
     println!("tap0: ip addr is {}", my_ip_addr);
     println!("tap0: ip6 addr is {}", my_ip6_addr);

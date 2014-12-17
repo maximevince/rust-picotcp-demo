@@ -19,14 +19,14 @@ fn main() {
     let dhcp_end = pico_ip4::new("192.168.2.10");
 
     let pico_dev_eth = picotcp::tap_create("tap0");
-    picotcp::ipv4_link_add(pico_dev_eth, my_ip_addr, my_netmask);
-    picotcp::ipv6_link_add(pico_dev_eth, my_ip6_addr, my_6_netmask);
+    picotcp::ipv4_link_add(pico_dev_eth, my_ip_addr.clone(), my_netmask.clone());
+    picotcp::ipv6_link_add(pico_dev_eth, my_ip6_addr.clone(), my_6_netmask.clone());
     
-    println!("tap0: ip addr is {}", my_ip_addr);
+    println!("tap0: ip addr is {}", my_ip_addr.clone());
     println!("tap0: ip6 addr is {}", my_ip6_addr);
     
     let mut settings : pico_dhcp_server_setting = pico_dhcp_server_setting {
-        pool_start: dhcp_start,
+        pool_start: dhcp_start.clone(),
         pool_next: dhcp_start,
         pool_end: dhcp_end,
         lease_time: 0,

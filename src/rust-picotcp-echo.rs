@@ -49,8 +49,8 @@ fn main() {
     let mut bind_port:u16 =  7 as u16;
 
     let pico_dev_eth = picotcp::tun_create("tun0");
-    picotcp::ipv4_link_add(pico_dev_eth, my_ip_addr, my_netmask);
-    picotcp::ipv6_link_add(pico_dev_eth, my_ip6_addr, my_6_netmask);
+    picotcp::ipv4_link_add(pico_dev_eth, my_ip_addr.clone(), my_netmask.clone());
+    picotcp::ipv6_link_add(pico_dev_eth, my_ip6_addr.clone(), my_6_netmask.clone());
     
     println!("tun0: ip addr is {}", my_ip_addr);
     println!("tun0: ip6 addr is {}", my_ip6_addr);
@@ -61,13 +61,13 @@ fn main() {
     let p = bind_tuple.val1();
 
     if r != 0 {
-        fail!("Bind");
+        panic!("Bind");
     }
     println!("Bound to port {}", p);
 
     r = listen(s, 10); 
     if r != 0 {
-        fail!("listen");
+        panic!("listen");
     }
 
 
